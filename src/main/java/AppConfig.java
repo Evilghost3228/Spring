@@ -11,4 +11,9 @@ public class AppConfig {
         helloWorld.setMessage("Hello World!");
         return helloWorld;
     }
+    @Bean(name = "cat")
+    @Scope("prototype")  // Устанавливаем, чтобы бин создавался новым при каждом запросе
+    public Cat cat() {
+        return new Cat();
+    }
 }
